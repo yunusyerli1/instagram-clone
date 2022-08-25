@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signOut, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import toast from "react-hot-toast";
 import { userHandle } from "utils";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -32,4 +32,12 @@ export const login = async (email, password) => {
     } catch(err) {
         toast.error(err.code)
     }
+}
+
+export const logout = async ( ) => {
+  try {
+    await signOut(auth)
+  } catch (err) {
+    toast.error(err.code)
+  }
 }

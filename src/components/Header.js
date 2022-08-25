@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Search from "./Search";
+import {logout} from "firebase.js";
 
 export default function Header() {
     return(
@@ -9,6 +10,9 @@ export default function Header() {
                     <img className="h-[29px]" src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png"/>
                 </Link>
                 <Search/>
+                <nav>
+					<button onClick={logout}>Logout</button>
+				</nav>
 
             </div>
             
